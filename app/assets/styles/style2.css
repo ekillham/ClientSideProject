@@ -1,0 +1,143 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+body {
+	margin: 0;
+	padding: 0;
+	background: #23527c;
+}
+
+#header {
+	width:1000px
+	margin:0 auto;
+	height: 50px;
+	margin-bottom: 10px;
+	/* Use the below to view header */
+	/* background-color: #CCCCCC; */
+}
+
+input[type=text] {
+    width: 250px;
+	float: right;
+	margin-right: 15px;
+	margin: 5px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 25px;
+    font-size: 12px;
+    background-color: white;
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+    width: 30%;
+}
+
+#main {
+	position: relative;
+	z-index: 0;
+	background: #FFFFFF;
+	max-width: 933px;
+	max-height: 700px;
+	margin: 0 auto 5px;
+	padding: 25px;
+	border-radius: 25px;
+	text-align: center;
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);	
+}
+
+#error {
+  position: relative;
+  z-index: 0;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 300px;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+span {
+	color: #FFFFFF;
+    transition: margin-left .5s;
+    padding: 20px;
+	font-weight: bold;
+	font-size: 33px;
+	font-family: "Roboto". sans-serif;
+}
+
+/* The side navigation menu */
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 75px;
+    left: 0;
+    background-color: #FFFFFF; /* White*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+	border-radius: 25px;
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #23527c;
+    display: block;
+    transition: 0.3s
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover, .offcanvas a:focus{
+    color: #337ab7;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+.inventory-form button {
+	margin 15px 15px 15px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #23527c;
+    color: #FFFFFF;
+}
+tr:hover{
+	background-color:#337ab7;
+}
+
+footer {
+  margin: 30px 0 0;
+  color: #FFF;
+  font-size: 14px;
+  text-align:center;
+}
+
+

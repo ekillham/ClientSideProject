@@ -1,4 +1,4 @@
-he MIT License
+The MIT License
 
 Copyright (c) 2017 Eric Killham
 

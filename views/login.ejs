@@ -1,0 +1,71 @@
+<!-- Google auth will authenticate, but will not redirect at thist time. All login and account creation functionality work properly-->  
+
+</html>
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>JRE Tracking</title>
+		<meta charset="utf-8" />
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="google-signin-client_id" content="834106135672-oej8lek7mdmkh0kjo1vcredf33ffk9g8.apps.googleusercontent.com">
+		<link rel="stylesheet" href="/styles/style.css">
+		<script src="https://apis.google.com/js/client:platform.js" async defer></script>
+		<script type="text/javascript" src="scripts/auth.js"></script>
+	</head>
+
+	<body>
+		<div class="login-page">
+		  <div class="form">
+			    <h1>
+					<img src="images/JREtracking_logo.png" />
+					<div id="g-signin2" data-onsuccess="onSignIn"></div>
+				</h1>
+				
+				 <% if(locals.error) { %>
+					<div class="alert alert-danger"><%= error %></div>
+				<% } %>
+				<% if(locals.success) { %>
+					<div class="alert alert-success"><%= success %></div>
+				<% } %>
+			<form method="post">		
+			<form class="login-form">	
+				
+				<div class="form-group">
+				<label for="username"></label>
+				<input type="text" name="username" id="username" class="form-control" value="<%= locals.username || '' %>" required placeholder='Username'  />
+				</div>
+				
+				<div class="form-group">
+				<label for="password"></label>
+				<input type="password" name="password" id="password" class="form-control" required placeholder='Password'/>
+				</div>
+				
+				<div class="form-group">
+				<button type="submit" class="btn btn-primary">Login</button>
+				</div>
+			  
+				<div class="g-signin2" 
+				data-onsuccess="onSignIn" 
+				data-theme="light" datawidth="300" dataheight="45" datalongtitle="true" 
+				redirect-uri="http://localhost:3001/app"
+				></div>
+				
+				
+			  
+			  
+			  <p class="message">Not registered? <a href="/register" class="btn btn-link">Request Access</a></p>
+			</form>
+		  </div>
+		</div>
+	
+		<footer id=footer>
+					<p>Copyright 2017 JRE Inc. All rights reserved.</p>	
+		
+		</footer>
+		
+		
+	</body>
+
+</html>

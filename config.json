@@ -1,0 +1,5 @@
+﻿{
+    "connectionString": "mongodb://localhost:27017/jre-tracking",
+    "apiUrl": "http://localhost:3001/api",
+    "secret": "JRE TRACKING AND REALLY FUN TO USE"
+}
