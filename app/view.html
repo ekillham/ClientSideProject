@@ -8,24 +8,25 @@
 		<meta name="google-signin-client_id" content="834106135672-oej8lek7mdmkh0kjo1vcredf33ffk9g8.apps.googleusercontent.com">
 		<link rel="stylesheet" href="assets\styles\style2.css"/>
 		<script src="assets\scripts\sidenav.js"></script>
-		<script src="assets\scripts\auth.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jguery.min.js"></script>
+		<!-- <script src="assets\scripts\auth.js"></script>-->
+	        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.0.min.js"></script>
 		<script src="https://apis.google.com/js/client:platform.js" async defer></script>
+		<script src="assets/scripts/main.js"></script>
 	</head>
 
 	<body>
-	
+
 		<header id="header">
 			<form>
 			  <img src="assets\images\JREtracking_logo_reverse.png" />
 			  <input type="text" name="search" placeholder="Search..">
 			</form>
 		</header>
-		
+
 		<div>
 			<span onclick="openNav()">&#9776; Menu</span>
-		</div>		
-		
+		</div>
+
 		<div id="mySidenav" class="sidenav">
 		  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 		  <a href="/app">Dashboard</a>
@@ -36,10 +37,11 @@
 		  <a href="error.html">Help</a>
 		  <a href="/login"target="_self">Logout</a>
 		</div>
-		
+
 		<div id="main"> <h1> JRE ASSETS </h1> </div>
 		<div id="main">
 		<div class="form">
+		<form action="/app/assets" method="post">
 		<form class="inventory-form">
 				<table>
 					<tr>
@@ -48,87 +50,35 @@
 						<th width="12%">CPU(s)</th>
 						<th width="12%">RAM (GB)</th>
 						<th width="12%">Type</th>
-						<th width="14%">RACK #</th>				
+						<th width="14%">RACK #</th>
 					</tr>
-					<tr>
-						<td><input name="input-Name" size="10" required/></td>
-						<td><input name="input-OS" size="25" required /></td>
-						<td><input name="input-CPU" size="3" required /></td>
-						<td><input name="input-RAM" size="4" required /></td>
-						<td><input name="input-Virtual" size="7" required /></td>
-						<td><input name="input-RACK" size="9" required /></td>
+				<tr>
+						<td><input name="name" id="name" size="10" required/></td>
+						<td><input name="os" id="os" size="25" required /></td>
+						<td><input name="cpu" id="cpu" size="3" required /></td>
+						<td><input name="ram" id="ram" size="4" required /></td>
+						<td><input name="type" id="type" size="7" required /></td>
+						<td><input name="rack" id="rack" size="9" required /></td>
 					</tr>
 				</table>
-			<button type="submit" value="submit">Submit</button>
-			</form>
-			
-			<table>
-				<tr>
-					<th width="15%">Name</th>
-					<th width="27%">OS</th>
-					<th width="12%">CPU(s)</th>
-					<th width="12%">RAM (GB)</th>
-					<th width="12%">Type</th>
-					<th width="14%">RACK #</th>		
-				</tr>
-				<tr>
-					<td>SERVER1</td>
-					<td>WINDOWS 2012 R2</td>
-					<td>4</td>
-					<td>8GB</td>
-					<td>VIRTUAL</td>
-					<td>A3U10</td>
-				</tr>
-				<tr>
-					<td>SERVER2</td>
-					<td>RED HAT 7</td>
-					<td>2</td>
-					<td>4GB</td>
-					<td>VIRTUAL</td>
-					<td>B10U12</td>
-				</tr>
-				<tr>
-					<td>SERVER3</td>
-					<td>WINDOWS 2008 R2</td>
-					<td>8</td>
-					<td>32GB</td>
-					<td>PHSYICAL</td>
-					<td>A3U24</td>
-				</tr>
-				<tr>
-					<td>SERVER4</td>
-					<td>RED HAT 7</td>
-					<td>8</td>
-					<td>32GB</td>
-					<td>PHSYICAL</td>
-					<td>A1U08</td>
-				</tr>
-				<tr>
-					<td>SERVER5</td>
-					<td>WINDOWS 2012 R2</td>
-					<td>4</td>
-					<td>16GB</td>
-					<td>VIRTUAL</td>
-					<td>C10U16</td>
-				</tr>
-				<tr>
-					<td>SERVER6</td>
-					<td>RED HAT 7</td>
-					<td>16</td>
-					<td>64GB</td>
-					<td>PHSYICAL</td>
-					<td>D12U08</td>
-				</tr>
-			</table>
+				<button type="submit" class="btn btn-primary">Submit</button>
+				</form>
+				<table>
+					<tr>
+						<th width="15%">Name</th>
+						<th width="27%">OS</th>
+						<th width="12%">CPU(s)</th>
+						<th width="12%">RAM (GB)</th>
+						<th width="12%">Type</th>
+						<th width="14%">RACK #</th>
+					</tr>
+				</table>
+
+			<table id="assets">  </table>
+
 		</div>
-		</div>
-		<footer id="footer">
-	
-		
-					<p>Copyright 2017 JRE Inc. All rights reserved.</p>	
-		
-		</footer>
-	
+		<footer id="footer"><p>Copyright 2017 JRE Inc. All rights reserved.</p></footer>
+
 	</body>
 
 </html>

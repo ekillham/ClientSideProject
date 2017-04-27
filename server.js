@@ -1,11 +1,15 @@
 ﻿require('rootpath')();
 var express = require('express');
+//Added for Mongoose connection
+var mongoose = require('mongoose');
+//Mongoose Connect
+mongoose.connect('mongodb://localhost/jre-tracking');
+const db = mongoose.connection;
 var app = express();
 var session = require('express-session');
 var bodyParser = require('body-parser');
 var expressJwt = require('express-jwt');
 var config = require('config.json');
-
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
 app.use(express.static(__dirname + '/app/assets'));
@@ -21,7 +25,8 @@ app.use('/login', require('./controllers/login.controller'));
 app.use('/register', require('./controllers/register.controller'));
 app.use('/app', require('./controllers/app.controller'));
 app.use('/api/users', require('./controllers/api/users.controller'));
-
+const assets = require('./routes/assets');
+app.use ('/app/assets', assets);
 // make '/app' default route
 app.get('/', function (req, res) {
     return res.redirect('/app');
