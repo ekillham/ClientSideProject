@@ -1,8 +1,9 @@
 $(document).ready(function(){
 	getTasks();
+	$('body').on('click', '.btn-delete', deleteAsset);
 });
-
-$('#add_task').on('submit', addAsset);
+//$('#add_asset').on('submit', addAsset);
+//$('body').on('click', '.btn-delete', deleteAsset);
 
 function getTasks() {
 	$.get('http://localhost:3001/app/assets', function(data) {
@@ -24,17 +25,12 @@ function getTasks() {
 	output += '<td width="12%">'
 	output += asset.type
 	output += '</td>'
-	output += '<td width="14%">'
-	output += asset.rack
+	output += '<td width="18%">'
+	output += asset.rack+" "+'<button type="button" class="btn-delete" data-name-id="'+asset._id+'">Delete</button>'
 	output += '</td>'
 	output += '</tr>'
-
-	//output += '<tr>'
-	//output += '<td>'
-	//output += asset.name+' '+asset.os+' '+asset.cpu+' '+asset.ram+' '+asset.type+' '+asset.rack;
-	//output += '</ul>';
-	$('#assets').html(output);
 	});
+	$('#assets').html(output);
 	});
 }
 
@@ -67,4 +63,19 @@ function addAsset(e) {
 }
 });
 e.preventDefault();
+}
+
+function deleteAsset(){
+	var name_id = $(this).data('name-id');
+	$.ajax({
+		url: 'http://localhost:3001/app/assets/'+name_id,
+		type: 'DELETE',
+		contentType: 'application/json',
+		success: function(data){
+			window.location.href='view.html';
+		},
+		error: function(xhr, status, err){
+				console.log(err);
+		}
+	});
 }

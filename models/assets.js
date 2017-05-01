@@ -47,3 +47,9 @@ module.exports.addAssets = (assets, callback) => {
 	}
 		Assets.create(add, callback);
 }
+
+//Remove Asset
+module.exports.removeAssets = (id, callback) => {
+	const query = {_id: id};
+	Assets.remove(query, callback);
+}
