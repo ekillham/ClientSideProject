@@ -37,4 +37,25 @@ router.post('/', (req, res) => {
        });
 });
 
+// Delete Asset
+router.delete('app/assets/:id', (req, res) => {
+const id = req.params.id;
+	Assets.removeAssets(id, (err, assets) => {
+	if(err){
+			res.send(err);
+		}
+		res.json(assets);
+  	return res.redirect('http://localhost:3001/app/view.html');
+});
+});
+//router.delete('/app/assets/:id', (req, res, next) => {
+//  db.assets.remove({_id: mongojs.ObjectId(req.params.id)}, (err, assets) => {
+//    if(err){
+//      res.send(err);
+//    }
+//    console.log('Removing Product...');
+//    res.json(assets);
+//  });
+//});
+
 module.exports = router;
